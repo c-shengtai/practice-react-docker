@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    build:
+      context: . # 指向要建立的資料夾
+      dockerfile: Dockerfile.dev # 指定dockerfile
+    stdin_open: true
+    ports:
+      - "3000:3000" # mapping port
+    volumes: # use docker volumes
+      - /app/node_modules # 使用container下的node_modules
+      - .:/app # 參照位置
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    stdin_open: true
+    tty: true
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
