@@ -11,10 +11,10 @@ script:
   deploy:
     provider: elasticbeanstalk # 指定aws elastic beanstalk
     region: "us-east-2" # server的地區 可以透過網址得到 http://practicereactdocker-env.eba-jgdqvumr.us-east-2.elasticbeanstalk.com/
-    app: "practice-react-docker" # 建立的app名稱
-    env: "PracticeReactDocker-env" # 自動建立的環境名稱
+    app: "practice-docker-react" # 建立的app名稱
+    env: "PracticeDockerReact-env" # 自動建立的環境名稱
     bucket_name: "elasticbeanstalk-us-east-2-585582745139" # 儲存的名稱 可以透過s3查到
-    bucket_path: "practice-react-docker" 
+    bucket_path: "practice-docker-react" 
     on:
       branch: master # 只當master branch變動時才重新部署
       access_key_id: $AWS_ACCESS_KEY_ID # 使用環境變數
