@@ -18,5 +18,5 @@ deploy:
   bucket_path: "practice-docker-react"
   on:
     branch: master # 只當master branch變動時才重新部署
-    access_key_id: $AWS_ACCESS_KEY # 使用環境變數
-    secret_access_key: $AWS_SECRET_KEY
+  access_key_id: $AWS_ACCESS_KEY # 使用環境變數
+  secret_access_key: $AWS_SECRET_KEY
